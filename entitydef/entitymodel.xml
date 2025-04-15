@@ -25,7 +25,30 @@ under the License.
     <!-- ========================================================= -->
     <title>Entity of Ofbizdemo Component</title>
     <description>None</description>
-    <copyright></copyright>
-    <version></version>
+    <copyright/>
+    <version/>
+    
+    <!-- Creating an OfbizDemoType entity -->
+    <entity entity-name="OfbizDemoType" package-name="org.apache.ofbiz.ofbizdemo" title="Ofbiz Demo Type Entity">
+        <field name="ofbizDemoTypeId" type="id"/>
+        <field name="description" type="description"/>
+        <!-- Defining the primary key of the entity -->
+        <prim-key field="ofbizDemoTypeId"/>
+    </entity>
+    
+    <!-- Creating an OfbizDemo entity -->
+    <entity entity-name="OfbizDemo" package-name="org.apache.ofbiz.ofbizdemo" title="Ofbiz Demo Entity">
+        <field name="ofbizDemoId" type="id"/>
+        <field name="ofbizDemoTypeId" type="id"/>
+        <field name="firstName" type="name"/>
+        <field name="lastName" type="name"/>
+        <field name="comment" type="comment"/>
+        <!-- Defining the primary key of the entity -->
+        <prim-key field="ofbizDemoId" />
+        <!-- Defining the foreign key of the entity -->
+        <relation type="one" rel-entity-name="OfbizDemoType">
+            <key-map field-name="ofbizDemoTypeId"/>
+        </relation>
+    </entity>
 
 </entitymodel>
