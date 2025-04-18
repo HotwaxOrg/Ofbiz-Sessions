@@ -37,4 +37,9 @@ under the License.
         <override name="comments" optional="true"/>
     </service>
     
+    <service name="createOfbizDemoByJavaService" default-entity-name="OfbizDemo" engine="java" location="ofbizdemo.services.OfbizDemoServices" invoke="createOfbizDemo" auth="true">
+        <auto-attributes mode="IN" include="nonpk" optional="false"/>
+        <auto-attributes mode="OUT" include="pk" optional="false"/>
+        <override name="comments" optional="true"/>
+    </service>
 </services>
